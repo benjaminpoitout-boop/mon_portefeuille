@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mon Portefeuille</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mon Portefeuille</h1>
+    <p class="subtitle">Suivi personnel de comptes — pas une banque</p>
+  </header>
+
+  <main>
+    <section class="balance-card">
+      <div>
+        <h2>Solde</h2>
+        <div id="balance">0 €</div>
+      </div>
+      <div>
+        <h3>Filtrer</h3>
+        <select id="filterCategory">
+          <option value="all">Toutes catégories</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="add-transaction">
+      <h2>Nouvelle transaction</h2>
+      <form id="txForm">
+        <div class="row">
+          <input type="text" id="desc" placeholder="Description" required />
+          <input type="number" id="amount" placeholder="Montant (positive = revenu, négative = dépense)" step="0.01" required />
+        </div>
+        <div class="row">
+          <select id="category">
+            <option value="Salaire">Salaire</option>
+            <option value="Alimentation">Alimentation</option>
+            <option value="Logement">Logement</option>
+            <option value="Transport">Transport</option>
+            <option value="Loisirs">Loisirs</option>
+            <option value="Autre">Autre</option>
+          </select>
+          <input type="date" id="date" />
+        </div>
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <section class="transactions">
+      <h2>Historique</h2>
+      <ul id="txList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>Les données restent sur ton appareil (localStorage). Ce site n’effectue aucune opération bancaire réelle.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
