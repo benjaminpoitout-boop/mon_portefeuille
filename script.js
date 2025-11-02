@@ -1,3 +1,14 @@
+let solde = 10000000;
+
+// Fonction pour afficher le solde
+function afficherSolde() {
+  const soldeElement = document.getElementById("solde");
+  if (soldeElement) {
+    soldeElement.textContent = solde.toFixed(2) + " €";
+  }
+}
+
+afficherSolde();
 // Simple personal finance tracker using localStorage
 const LS_KEY = 'mon_portefeuille_v1';
 let transactions = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
